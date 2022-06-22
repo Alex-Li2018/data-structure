@@ -69,7 +69,7 @@ A Binary Tree is a full binary tree if every node has 0 or 2 children.
                  100   4
 ```
 
-### Complete Binary Tree（完整二叉树）
+### Complete Binary Tree（完全二叉树）
 
 - Every level must be completely filled（每一级都必须全部填完）
 
@@ -95,7 +95,9 @@ A Binary Tree is a full binary tree if every node has 0 or 2 children.
 
 ```
 
-### Perfect Binary Tree(完美二叉树)
+![二叉树](./%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%8E%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91.png)
+
+### Perfect Binary Tree(满二叉树)
 
 A Binary tree is a Perfect Binary Tree in which all the internal nodes have two children and all leaf nodes are at the same level（内部节点都有两个子节点，所有的叶子节点都有相同的层级）
 
@@ -117,3 +119,19 @@ A Binary tree is a Perfect Binary Tree in which all the internal nodes have two 
 A binary tree is balanced if the height of the tree is O(Log n) where n is the number of nodes. For Example, the AVL tree maintains O(Log n) height by making sure that the difference between the heights of the left and right subtrees is at most 1. Red-Black trees maintain O(Log n) height by making sure that the number of Black nodes on every root to leaf paths is the same and there are no adjacent red nodes. Balanced Binary Search trees are performance-wise good as they provide O(log n) time for search, insert and delete. 
 
 It is a type of binary tree in which the difference between the height of the left and the right subtree for each node is either 0 or 1.
+
+### 二叉查找树
+
+二叉查找树是二叉树中最常用的一种类型，也叫二叉搜索树。顾名思义，二叉查找树是为了实现快速查找而生的。不过，它不仅仅支持快速查找一个数据，还支持快速插入、删除一个数据。
+
+二叉查找树要求，在树中的任意一个节点，其左子树中的每个节点的值，都要小于这个节点的值，而右子树节点的值都大于这个节点的值。
+
+```js
+              7
+           /       \  
+          4          9 
+        /  \        /  \
+       2    6      8   10
+     /  \   /
+    1    3  5 
+```
