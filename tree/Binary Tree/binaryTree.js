@@ -14,19 +14,127 @@ class BinarySearchTree {
 		this.root = null;
 	}
 
-	// function to be implemented
-	insert(data) {
-        
+	insertLeft(data) {
+        const node = new Node(data)
+
+		if (this.root === null) {
+			this.root = node
+		} else {
+			let curNode = this.root
+
+			while(curNode.left) {
+				curNode = curNode.left
+			}
+
+			curNode.left = node
+		}
     }
-	// remove(data)
-				
+
+	insertRight(data) {
+		const node = new Node(data)
+
+		if (this.root === null) {
+			this.root = node
+		} else {
+			let curNode = this.root
+
+			while(curNode.right) {
+				curNode = curNode.right
+			}
+
+			curNode.right = node
+		}
+	}			
 
 	// Helper function
-	// findMinNode()
-	// getRootNode()
-	// inorder(node)
-	// preorder(node)			
-	// postorder(node)
-	// search(node, data)
+	// 中序遍历
+	inorder(node) {
+		const traverseArr = []
+
+		// 递归实现
+		function traverse(node) {
+			if (node) {
+				// 遍历左节点
+				traverse(node.left)
+
+				traverseArr.push(node.data)
+
+				// 遍历右节点
+				traverse(node.right)
+			} else {
+				return
+			}
+		}
+		
+		traverse(node)
+
+		console.log(traverseArr)
+	}
+
+	// 先序遍历
+	preorder(node) {
+		const traverseArr = []
+
+		// 递归实现
+		function traverse(node) {
+			if (node) {
+				traverseArr.push(node.data)
+
+				// 遍历左节点
+				traverse(node.left)
+
+				// 遍历右节点
+				traverse(node.right)
+			} else {
+				return
+			}
+		}
+		
+		traverse(node)
+
+		console.log(traverseArr)
+	}	
+	
+	// 后序遍历
+	postorder(node) {
+		const traverseArr = []
+
+		// 递归实现
+		function traverse(node) {
+			if (node) {
+				// 遍历左节点
+				traverse(node.left)
+
+				// 遍历右节点
+				traverse(node.right)
+
+				traverseArr.push(node.data)
+			} else {
+				return
+			}
+		}
+		
+		traverse(node)
+
+		console.log(traverseArr)
+	}
+
+	// 广度优化 Breath First Search
+	breathFirstSearch() {
+		
+	}
 }
 
+
+const bs = new BinarySearchTree()
+
+bs.insertLeft(1)
+bs.insertLeft(2)
+bs.insertRight(3)
+bs.insertLeft(4)
+bs.insertRight(5)
+
+console.log(bs)
+bs.inorder(bs.root)
+bs.preorder(bs.root)
+bs.postorder(bs.root)
