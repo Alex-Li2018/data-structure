@@ -119,9 +119,23 @@ class BinarySearchTree {
 		console.log(traverseArr)
 	}
 
-	// 广度优化 Breath First Search
-	breathFirstSearch() {
-		
+	// 广度优化 Breath First Search 非递归实现
+	breathFirstSearch(root) {
+		const queue = []
+		const traverseArr = []
+
+		queue.push(root)
+
+		while(queue.length) {
+			const node = queue.shift()
+
+			traverseArr.push(node.data)
+
+			node.left && queue.push(node.left)
+			node.right && queue.push(node.right)
+		}
+
+		console.log(traverseArr)
 	}
 }
 
@@ -138,3 +152,5 @@ console.log(bs)
 bs.inorder(bs.root)
 bs.preorder(bs.root)
 bs.postorder(bs.root)
+
+bs.breathFirstSearch(bs.root)
