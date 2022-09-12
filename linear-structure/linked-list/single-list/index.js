@@ -68,6 +68,20 @@ class SingleList {
 
     this.length -= 1
   }
+
+  reverse(curr) {
+    if (curr.next === null) {
+      this.head = new LinkNode(null)
+      this.head.next = curr
+      return curr
+    }
+
+    const pre = this.reverse(curr.next)
+    pre.next = curr
+    curr.next = null
+
+    return pre.next
+  }
 }
 
 const link = new SingleList()
@@ -75,6 +89,8 @@ link.add(1)
 link.add(2)
 link.add(4)
 link.insert(2,3)
-link.remove(1)
+// link.remove(1)
+
+link.reverse(link.head.next)
 console.log(link)
 
