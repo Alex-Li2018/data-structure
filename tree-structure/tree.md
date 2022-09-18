@@ -12,7 +12,7 @@ Basic Terminology In Tree Data Structure:
 
 - Degree of a Node（节点的度）: The total count of subtrees attached to that node is called the degree of the node. The degree of a leaf node must be 0. The degree of a tree is the maximum degree of a node among all the nodes in the tree. The degree of the node {3} is 3.
 
-- Leaf Node or External Node: The nodes which do not have any child nodes are called leaf nodes. {6, 14, 8, 9, 15, 16, 4, 11, 12, 17, 18, 19} are the leaf nodes of the tree.
+- Leaf Node or External Node（叶子节点）: The nodes which do not have any child nodes are called leaf nodes. {6, 14, 8, 9, 15, 16, 4, 11, 12, 17, 18, 19} are the leaf nodes of the tree.
 Ancestor of a Node: Any predecessor nodes on the path of the root to that node are called Ancestors of that node. {1, 2} are the parent nodes of the node {7}
 
 - Descendant（祖先）: Any successor node on the path from the leaf node to that node. {7, 14} are the descendants of the node. {2}.

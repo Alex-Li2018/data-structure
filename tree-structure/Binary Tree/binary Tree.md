@@ -2,11 +2,11 @@
 
 A tree whose elements have at most 2 children is called a binary tree. Since each element in a binary tree can have only 2 children, we typically name them the left and right child. 
 
-最多两个节点
+二叉树的度（一个节点含有子树的个数）最大是2
 
 ## 遍历方式
 
-- PreOrder Traversal（先序遍历）: Here, the traversal is : root – left child – right child. It means that the root node is traversed first then its left child and finally the right child.
+- PreOrder Traversal（先（前）序遍历）: Here, the traversal is : root – left child – right child. It means that the root node is traversed first then its left child and finally the right child.
 
 - InOrder Traversal（中序遍历）: Here, the traversal is : left child – root – right child.  It means that the left child is traversed first then its root node and finally the right child.
 
@@ -75,7 +75,7 @@ A Binary Tree is a full binary tree if every node has 0 or 2 children.
 
 - All the leaf elements must lean towards the left.（所有叶子节点都必须向左倾斜）
 
-- The last leaf element might not have a right sibling i.e. a complete binary tree doesn’t have to be a full binary tree.（最后一个页子元素可能没有右兄弟元素）
+- The last leaf element might not have a right sibling i.e. a complete binary tree doesn’t have to be a full binary tree.（最后一个叶子元素可能没有右兄弟元素，叶节点只能出现在最下层和次下层，并且最下面一层的结点都集中在该层最左边的若干位置的二叉树）
 
 ```js
               18
