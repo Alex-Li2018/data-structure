@@ -129,6 +129,91 @@ class BinarySearchTree {
 
     }
 
+    // 深度优先DFS
+    // 中序
+    inorder() {
+        const arr = []
+
+        function traverse(root) {
+            root.left && traverse(root.left)
+
+            if (root.value) {
+                arr.push({
+                    key: root.key,
+                    value: root.value
+                })
+            }
+
+            root.right && traverse(root.right)
+
+            return arr
+        }
+
+        return traverse(this.root)
+    }
+
+    // 先序
+    preOrder() {
+        const arr = []
+
+        function traverse(root) {
+            if (root.value) {
+                arr.push({
+                    key: root.key,
+                    value: root.value
+                })
+            }
+
+            root.left && traverse(root.left)
+            root.right && traverse(root.right)
+
+            return arr
+        }
+
+        return traverse(this.root)
+    }
+
+    // 后序
+    postOrder() {
+        const arr = []
+
+        function traverse(root) {
+            root.left && traverse(root.left)
+            root.right && traverse(root.right)
+            if (root.value) {
+                arr.push({
+                    key: root.key,
+                    value: root.value
+                })
+            }
+
+            return arr
+        }
+
+        return traverse(this.root) 
+    }
+
+    // 广度优先遍历
+    breathFirst() {
+        const queue = []
+		const traverseArr = []
+
+		queue.push(root)
+
+		while(queue.length) {
+			const node = queue.shift()
+
+			traverseArr.push(node.data)
+
+			node.left && queue.push(node.left)
+			node.right && queue.push(node.right)
+		}
+
+		return traverseArr
+    }
+
+
+
     size() {
         return this.length
     }
@@ -142,4 +227,7 @@ bs.put(12, 'zhaosan')
 bs.put(13, 'tangli')
 bs.put(14, 'songbao')
 const value = bs.getValue(14)
-console.log(bs, value)
+const inorder = bs.inorder()
+const preOrder = bs.preOrder()
+const postOrder = bs.postOrder()
+console.log(bs, inorder, preOrder, postOrder)
