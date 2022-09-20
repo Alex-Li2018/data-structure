@@ -212,7 +212,33 @@ class BinarySearchTree {
 		return traverseArr
     }
 
+    // 最大深度
+    maxDepth() {
 
+        return maxDepthHandler(this.root)
+        
+        function maxDepthHandler(root) {
+            if (root === null) {
+                return 0
+            }
+
+            let leftDepth = 0
+            let rightDepth = 0
+            let depth = 0
+
+            if (root.left) {
+               leftDepth =  maxDepthHandler(root.left)
+            }
+
+            if (root.right) {
+                rightDepth = maxDepthHandler(root.right)
+            }
+
+            depth = leftDepth > rightDepth ? leftDepth + 1 : rightDepth + 1
+
+            return depth
+        }
+    }
 
     size() {
         return this.length
@@ -230,4 +256,5 @@ const value = bs.getValue(14)
 const inorder = bs.inorder()
 const preOrder = bs.preOrder()
 const postOrder = bs.postOrder()
+console.log(bs.maxDepth())
 console.log(bs, inorder, preOrder, postOrder)
