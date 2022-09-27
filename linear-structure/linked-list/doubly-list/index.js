@@ -23,13 +23,13 @@ class DoublyList {
 
   add(value) {
     if(this.tail === null) {
-        this.tail = new LinkNode(value, null, this.head)
-        this.head.next = this.tail
+      this.tail = new LinkNode(value, null, this.head)
+      this.head.next = this.tail
     } else {
-        const oldLast = this.tail
-        const node = new LinkNode(value, null, oldLast)
-        oldLast.next = node
-        this.tail = node
+      const oldLast = this.tail
+      const node = new LinkNode(value, null, oldLast)
+      oldLast.next = node
+      this.tail = node
     }
     this.length += 1
   }
@@ -41,7 +41,7 @@ class DoublyList {
 
     let pre = this.head
     for (let index = 0; index < i; index++) {
-        pre = pre.next
+      pre = pre.next
     }
 
     const current = pre.next
