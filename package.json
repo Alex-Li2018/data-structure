@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "debug": "node ./tree-structure/binary-tree/binarySearchTree.js"
+    "debug": "node ./tree-structure/heap/index.js"
   },
   "repository": {
     "type": "git",
